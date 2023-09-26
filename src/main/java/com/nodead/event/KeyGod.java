@@ -9,7 +9,7 @@ import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.lwjgl.glfw.GLFW;
-
+//・Pのキーを押すと、上昇する
 public class KeyGod {
     private static final int KEY_P = GLFW.GLFW_KEY_K; // Pキーのキーコード
     private static boolean isPKeyPressed = false;
