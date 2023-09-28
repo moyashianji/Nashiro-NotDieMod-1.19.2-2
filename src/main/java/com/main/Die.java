@@ -1,6 +1,9 @@
 package com.main;
 
 import com.dropitem.DropItems;
+import com.enderdragons.click.DragonTransfer;
+import com.enderdragons.click.DragonTransfer2;
+import com.enderdragons.click.DragonTransfer3;
 import com.enderdragons.init.EnderdragonsModEntities;
 import com.enderdragons.init.EnderdragonsModItems;
 import com.itemmod.init.ItemmodModItems;
@@ -32,6 +35,9 @@ public class Die {
         DropItems.register();
         EnderdragonsModItems.REGISTRY.register(bus);
         EnderdragonsModEntities.REGISTRY.register(bus);
+        DragonTransfer.register();
+        DragonTransfer2.register();
+        DragonTransfer3.register();
 
         bus.addListener(this::onClientSetup);
     }
