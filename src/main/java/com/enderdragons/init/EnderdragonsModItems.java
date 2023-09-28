@@ -4,6 +4,9 @@
  */
 package com.enderdragons.init;
 
+import com.enderdragons.item.EnderaheadItem;
+import com.enderdragons.item.EndertailItem;
+import com.enderdragons.item.EnderwingItem;
 import com.main.reference;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,4 +25,8 @@ public class EnderdragonsModItems {
 			() -> new ForgeSpawnEggItem(EnderdragonsModEntities.ENDER_WINGS, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> ENDERTAILS = REGISTRY.register("endertails_spawn_egg",
 			() -> new ForgeSpawnEggItem(EnderdragonsModEntities.ENDERTAILS, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> ENDERAHEAD = REGISTRY.register("enderahead", () -> new EnderaheadItem());
+	public static final RegistryObject<Item> ENDERTAIL = REGISTRY.register("endertail", () -> new EndertailItem());
+	public static final RegistryObject<Item> ENDERWING = REGISTRY.register("enderwing", () -> new EnderwingItem());
+
 }
