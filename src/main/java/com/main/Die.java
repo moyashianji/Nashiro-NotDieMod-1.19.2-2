@@ -1,6 +1,8 @@
 package com.main;
 
 import com.dropitem.DropItems;
+import com.enderdragons.init.EnderdragonsModEntities;
+import com.enderdragons.init.EnderdragonsModItems;
 import com.itemmod.init.ItemmodModItems;
 import com.nodead.event.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -28,6 +30,8 @@ public class Die {
         KeyGod.register();
         ItemmodModItems.REGISTRY.register(bus);
         DropItems.register();
+        EnderdragonsModItems.REGISTRY.register(bus);
+        EnderdragonsModEntities.REGISTRY.register(bus);
 
         bus.addListener(this::onClientSetup);
     }
