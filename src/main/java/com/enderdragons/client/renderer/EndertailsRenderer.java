@@ -15,6 +15,6 @@ public class EndertailsRenderer extends MobRenderer<EndertailsEntity, Modeldrago
 
 	@Override
 	public ResourceLocation getTextureLocation(EndertailsEntity entity) {
-		return new ResourceLocation("enderdragons:textures/entities/dragon.png");
+		return new ResourceLocation("die:textures/entities/dragon.png");
 	}
 }

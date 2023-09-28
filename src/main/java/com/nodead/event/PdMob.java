@@ -1,5 +1,8 @@
 package com.nodead.event;
 
+import com.enderdragons.entity.EnderWingsEntity;
+import com.enderdragons.entity.EnderbodyEntity;
+import com.enderdragons.entity.EndertailsEntity;
 import net.minecraft.client.renderer.EffectInstance;
 import net.minecraft.client.renderer.entity.CreeperRenderer;
 import net.minecraft.world.damagesource.DamageSource;
@@ -44,7 +47,11 @@ public class PdMob {
                             && !(entity instanceof Spider)
                             && !(entity instanceof Skeleton)
                             && !(entity instanceof IronGolem)
-                            && !(entity instanceof EnderDragon)) {
+                            && !(entity instanceof EnderDragon)
+                            && !(entity instanceof EnderbodyEntity)
+                            && !(entity instanceof EndertailsEntity)
+                            && !(entity instanceof EnderWingsEntity)
+                    ) {
 
                         // プレイヤー自身やモンスター以外のエンティティに対してのみ適用
                         LivingEntity livingEntity = (LivingEntity) entity;
