@@ -1,7 +1,9 @@
 package com.nodead.event;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,6 +32,8 @@ public class PdDamage {
                     || event.getSource() == DamageSource.STARVE
                     || event.getSource() == DamageSource.SWEET_BERRY_BUSH
                     || event.getSource() == DamageSource.WITHER
+
+
             ) { // マグマからのダメージの場合（適切なダメージソースを指定）
                 event.setCanceled(true); // ダメージを無効にする
 
@@ -40,4 +44,5 @@ public class PdDamage {
     public static void register() {
         MinecraftForge.EVENT_BUS.register(PdDamage.class);
     }
+
 }

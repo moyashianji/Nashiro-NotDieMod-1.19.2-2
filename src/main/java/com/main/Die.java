@@ -1,5 +1,7 @@
 package com.main;
 
+import com.dropitem.DropItems;
+import com.itemmod.init.ItemmodModItems;
 import com.nodead.event.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -24,6 +26,8 @@ public class Die {
         PdBerry.register();
         PdTnt.register();
         KeyGod.register();
+        ItemmodModItems.REGISTRY.register(bus);
+        DropItems.register();
 
         bus.addListener(this::onClientSetup);
     }
