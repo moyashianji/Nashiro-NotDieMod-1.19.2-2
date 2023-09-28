@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "die:silverfishtail"
+    },
+    {
+      "item": "die:hoglintail"
+    },
+    {
+      "item": "die:wolftail"
+    },
+    {
+      "item": "die:horsetail"
+    }
+  ],
+  "result": {
+    "item": "die:endertail",
+    "count": 1
+  }}

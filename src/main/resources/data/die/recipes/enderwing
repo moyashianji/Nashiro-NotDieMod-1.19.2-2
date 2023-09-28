@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "die:beewings"
+        },
+        {
+            "item": "minecraft:phantom_membrane"
+        },
+        {
+            "item": "minecraft:feather"
+        },
+        {
+            "item": "die:vexwings"
+        }
+    ],
+    "result": {
+        "item": "die:enderwing",
+        "count": 1
+    }}

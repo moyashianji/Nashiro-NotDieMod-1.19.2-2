@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "die:endermiteeye"
+        },
+        {
+            "item": "minecraft:spider_eye"
+        },
+        {
+            "item": "minecraft:ender_pearl"
+        }
+    ],
+    "result": {
+        "item": "die:enderahead",
+        "count": 1
+    }}
