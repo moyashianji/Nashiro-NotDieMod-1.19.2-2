@@ -9,5 +9,11 @@
   "item.die.endermiteeye": "Endermiteeye",
   "item.die.vexwings": "Vexwings",
   "item.die.propera_boots": "Propera 個のブーツ",
-  "item.die.propera_helmet": "Propera ヘルメット"
+  "item.die.propera_helmet": "Propera ヘルメット",
+  "entity.die.ender_wings": "Ender Wings",
+  "item.die.endertails_spawn_egg": "Endertails Spawn Egg",
+  "item.die.ender_wings_spawn_egg": "Ender Wings Spawn Egg",
+  "entity.die.endertails": "Endertails",
+  "item.die.enderbody_spawn_egg": "Enderbody Spawn Egg",
+  "entity.die.enderbody": "Enderbody"
 }
