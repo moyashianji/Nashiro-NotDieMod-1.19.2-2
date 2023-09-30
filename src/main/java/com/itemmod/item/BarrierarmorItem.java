@@ -14,8 +14,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 
-public abstract class ProperaItem extends ArmorItem {
-	public ProperaItem(EquipmentSlot slot, Properties properties) {
+public abstract class BarrierarmorItem extends ArmorItem {
+	public BarrierarmorItem(EquipmentSlot slot, Properties properties) {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForSlot(EquipmentSlot slot) {
@@ -44,7 +44,7 @@ public abstract class ProperaItem extends ArmorItem {
 
 			@Override
 			public String getName() {
-				return "propera";
+				return "barrierarmor";
 			}
 
 			@Override
@@ -59,47 +59,47 @@ public abstract class ProperaItem extends ArmorItem {
 		}, slot, properties);
 	}
 
-	public static class Helmet extends ProperaItem {
+	public static class Helmet extends BarrierarmorItem {
 		public Helmet() {
 			super(EquipmentSlot.HEAD, new Properties().tab(CreativeModeTab.TAB_COMBAT));
 		}
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "itemmod:textures/models/armor/testt_layer_1.png";
+			return "die:textures/models/armor/test__layer_1.png";
 		}
 	}
 
-	public static class Chestplate extends ProperaItem {
+	public static class Chestplate extends BarrierarmorItem {
 		public Chestplate() {
 			super(EquipmentSlot.CHEST, new Properties().tab(CreativeModeTab.TAB_COMBAT));
 		}
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "itemmod:textures/models/armor/testt_layer_1.png";
+			return "die:textures/models/armor/test__layer_1.png";
 		}
 	}
 
-	public static class Leggings extends ProperaItem {
+	public static class Leggings extends BarrierarmorItem {
 		public Leggings() {
 			super(EquipmentSlot.LEGS, new Properties().tab(CreativeModeTab.TAB_COMBAT));
 		}
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "itemmod:textures/models/armor/testt_layer_2.png";
+			return "die:textures/models/armor/test__layer_2.png";
 		}
 	}
 
-	public static class Boots extends ProperaItem {
+	public static class Boots extends BarrierarmorItem {
 		public Boots() {
 			super(EquipmentSlot.FEET, new Properties().tab(CreativeModeTab.TAB_COMBAT));
 		}
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "itemmod:textures/models/armor/testt_layer_1.png";
+			return "die:textures/models/armor/test__layer_1.png";
 		}
 	}
 }

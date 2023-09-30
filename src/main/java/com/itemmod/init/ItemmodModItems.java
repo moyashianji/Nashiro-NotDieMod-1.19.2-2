@@ -25,8 +25,11 @@ public class ItemmodModItems {
 	public static final RegistryObject<Item> HOGLINTAIL = REGISTRY.register("hoglintail", () -> new HoglintailItem());
 	public static final RegistryObject<Item> SILVERFISHTAIL = REGISTRY.register("silverfishtail", () -> new SilverfishtailItem());
 	public static final RegistryObject<Item> ENDERMITEEYE = REGISTRY.register("endermiteeye", () -> new EndermiteeyeItem());
-	public static final RegistryObject<Item> PROPERA_HELMET = REGISTRY.register("propera_helmet", () -> new ProperaItem.Helmet());
-	public static final RegistryObject<Item> PROPERA_CHESTPLATE = REGISTRY.register("propera_chestplate", () -> new ProperaItem.Chestplate());
-	public static final RegistryObject<Item> PROPERA_LEGGINGS = REGISTRY.register("propera_leggings", () -> new ProperaItem.Leggings());
-	public static final RegistryObject<Item> PROPERA_BOOTS = REGISTRY.register("propera_boots", () -> new ProperaItem.Boots());
+	public static final RegistryObject<Item> BARRIERARMOR_HELMET = REGISTRY.register("barrierarmor_helmet", () -> new BarrierarmorItem.Helmet());
+	public static final RegistryObject<Item> BARRIERARMOR_CHESTPLATE = REGISTRY.register("barrierarmor_chestplate",
+			() -> new BarrierarmorItem.Chestplate());
+	public static final RegistryObject<Item> BARRIERARMOR_LEGGINGS = REGISTRY.register("barrierarmor_leggings",
+			() -> new BarrierarmorItem.Leggings());
+	public static final RegistryObject<Item> BARRIERARMOR_BOOTS = REGISTRY.register("barrierarmor_boots", () -> new BarrierarmorItem.Boots());
+
 }
