@@ -43,6 +43,8 @@ public class NearCactusEvent {
     private static boolean timerStarted = false; // タイマーが開始されたかどうかを示すフラグ
     private static Timer timer; // タイマーオブジェクト
     public static boolean cooltime = false;
+    public static boolean middletime = false;
+
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.END && event.player != null) {
@@ -59,26 +61,30 @@ public class NearCactusEvent {
                 for (Entity entity : world.getEntities(player, player.getBoundingBox().inflate(shortsize))) {
                     if (entity instanceof CactusEntity && entity != player && !(entity instanceof Player)) {
                         if (cooltime == false) {
-                            cooltime = true;
-                            // ゾンビを右クリックしたらタイマーを開始
-                            if (!timerStarted) {
-                                timerStarted = true; // タイマーを開始
-                                timer = new Timer();
-                                timer.scheduleAtFixedRate(new TimerTask() {
-                                    @Override
-                                    public void run() {
-                                        // aaa の値を0.5秒ごとに1減少
-                                        aaa -= 0.05;
-                                        System.out.println("aaa の値: " + aaa);
+                            middletime = false;
+                            if (middletime == false) {
+                                cooltime = true;
+                                // ゾンビを右クリックしたらタイマーを開始
+                                if (!timerStarted) {
+                                    timerStarted = true; // タイマーを開始
+                                    timer = new Timer();
+                                    timer.scheduleAtFixedRate(new TimerTask() {
+                                        @Override
+                                        public void run() {
+                                            // aaa の値を0.5秒ごとに1減少
+                                            aaa -= 0.05;
+                                            System.out.println("aaa の値: " + aaa);
 
-                                        // aaa が 0 以下になったらタイマーを停止
-                                        if (aaa <= 0.2) {
-                                            timer.cancel();
-                                            System.out.println("タイマーを停止しました");
-                                            timerStarted = false;
+                                            // aaa が 0 以下になったらタイマーを停止
+                                            if (aaa <= 0.2) {
+                                                timer.cancel();
+                                                System.out.println("タイマーを停止しました");
+                                                timerStarted = false;
+                                                middletime =true;
+                                            }
                                         }
-                                    }
-                                }, 0, 250); // 初回実行の遅延時間（0ミリ秒）、タスクの実行間隔（500ミリ秒＝0.5秒）
+                                    }, 0, 250); // 初回実行の遅延時間（0ミリ秒）、タスクの実行間隔（500ミリ秒＝0.5秒）
+                                }
                             }
                         }
                     }
@@ -91,8 +97,35 @@ public class NearCactusEvent {
 
         Entity target = event.getTarget();
         if (event.getTarget() instanceof CactusEntity) {
-            aaa = 1.0F;
-            cooltime = false;
+
+            if(middletime ==true){
+                cooltime = true;
+
+            if (cooltime == true) {
+                // ゾンビを右クリックしたらタイマーを開始
+                if (!timerStarted) {
+                    timerStarted = true; // タイマーを開始
+                    timer = new Timer();
+                    timer.scheduleAtFixedRate(new TimerTask() {
+                        @Override
+                        public void run() {
+                            // aaa の値を0.5秒ごとに1減少
+                            aaa += 0.05;
+                            System.out.println("aaa の値: " + aaa);
+
+                            // aaa が 0 以下になったらタイマーを停止
+                            if (aaa >= 1.0) {
+                                timer.cancel();
+                                System.out.println("タイマーを停止しました");
+                                timerStarted = false;
+                                cooltime = false;
+                            }
+                        }
+                    }, 0, 250); // 初回実行の遅延時間（0ミリ秒）、タスクの実行間隔（500ミリ秒＝0.5秒）
+                }
+            }
+            }
+
         }
     }
 

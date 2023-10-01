@@ -38,7 +38,10 @@ public class CactusEntity extends Monster {
         setNoAi(false);
         setPersistenceRequired();
     }
-
+    @Override
+    public boolean canBeCollidedWith() {
+        return true;
+    }
     @Override
     public Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
