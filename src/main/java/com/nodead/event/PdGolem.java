@@ -5,6 +5,7 @@ import net.minecraft.network.chat.ComponentContents;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -40,6 +41,7 @@ public class PdGolem {
                 lastInteractionTime = currentTime; // 最後のインタラクション時刻を更新
 
             }
+
         }
     }
     // プレイヤーが右クリックしたときのイベントハンドラ

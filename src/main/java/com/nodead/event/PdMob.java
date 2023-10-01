@@ -1,5 +1,6 @@
 package com.nodead.event;
 
+import com.cactus.entity.CactusEntity;
 import com.enderdragons.entity.EnderWingsEntity;
 import com.enderdragons.entity.EnderbodyEntity;
 import com.enderdragons.entity.EndertailsEntity;
@@ -25,7 +26,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class PdMob {
 
-    private static final int RADIUS = 2; // 半径2マスの円内にいるモブにダメージを与える
+    public static final int RADIUS = 2; // 半径2マスの円内にいるモブにダメージを与える
     private static final int LEVITATIONRADIUS = 3;
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
@@ -51,6 +52,7 @@ public class PdMob {
                             && !(entity instanceof EnderbodyEntity)
                             && !(entity instanceof EndertailsEntity)
                             && !(entity instanceof EnderWingsEntity)
+                            && !(entity instanceof CactusEntity)
                     ) {
 
                         // プレイヤー自身やモンスター以外のエンティティに対してのみ適用

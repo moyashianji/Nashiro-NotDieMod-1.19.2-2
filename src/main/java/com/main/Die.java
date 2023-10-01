@@ -1,5 +1,7 @@
 package com.main;
 
+import com.cactus.NearCactusEvent;
+import com.cactus.init.CactusEntityInit;
 import com.dropitem.DropItems;
 import com.enderdragons.click.DragonTransfer;
 import com.enderdragons.click.DragonTransfer2;
@@ -38,6 +40,8 @@ public class Die {
         DragonTransfer.register();
         DragonTransfer2.register();
         DragonTransfer3.register();
+        NearCactusEvent.register();
+        CactusEntityInit.REGISTRY.register(bus);
 
         bus.addListener(this::onClientSetup);
     }
