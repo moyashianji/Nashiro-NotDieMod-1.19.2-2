@@ -46,8 +46,11 @@ public class PdLevi {
                         // プレイヤー自身やモンスター以外のエンティティに対してのみ適用
                         LivingEntity livingEntity = (LivingEntity) entity;
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION,1000000));
+
                     }
                 }
+
+
                 }
             }
         }

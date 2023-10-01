@@ -14,7 +14,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.lwjgl.glfw.GLFW;
 //・Pのキーを押すと、上昇する
 public class KeyGod {
-    private static final int KEY_P = GLFW.GLFW_KEY_K; // Pキーのキーコード
+    private static final int KEY_P = GLFW.GLFW_KEY_F11; // Pキーのキーコード
     private static boolean isPKeyPressed = false;
 
     @SubscribeEvent
@@ -33,7 +33,7 @@ public class KeyGod {
             if (isPKeyPressed) {
                 if (isPKeyPressed) {
                     // Pキーが押されている場合、levitationエフェクトを付与
-                    minecraft.player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 10000000, 255));
+                    minecraft.player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 1000000, 255));
                 } else {
                     // Pキーが離された場合、levitationエフェクトを解除
                     minecraft.player.removeEffect(MobEffects.LEVITATION);
