@@ -89,22 +89,7 @@ public class DropItems {
             event.getDrops().add(itemEntity);
         }
 
-        if (entity instanceof Hoglin) {
-            Hoglin wolf = (Hoglin) entity;
-            int dropAmount = 1; // 1つの土ブロックをドロップ
 
-            // ItemEntityを生成して土ブロックをドロップします
-            ItemEntity itemEntity = new ItemEntity(
-                    event.getEntity().level,
-                    event.getEntity().getX(),
-                    event.getEntity().getY(),
-                    event.getEntity().getZ(),
-                    new ItemStack(ItemmodModItems.HOGLINTAIL.get(), dropAmount)
-            );
-
-            // ItemEntityを追加します
-            event.getDrops().add(itemEntity);
-        }
         if (entity instanceof Silverfish) {
             Silverfish wolf = (Silverfish) entity;
             int dropAmount = 1; // 1つの土ブロックをドロップ
