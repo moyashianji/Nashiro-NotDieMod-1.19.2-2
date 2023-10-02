@@ -31,14 +31,7 @@ public class NearCactusEvent {
     private double positionvalue = 16.0;
     private double finalvalue = 0.0;
 
-    @SubscribeEvent
-    public void onClientTick(TickEvent.ClientTickEvent event) {
-        System.out.println("aaaaa");
-        if (event.phase == TickEvent.Phase.START) {
-            // プレイヤーの周りにいるゾンビエンティティとの距離を取得するコードをここに追加
-            getZombieDistance();
-        }
-    }
+
     public static float aaa = 1.0F; // 初期値を設定
     private static boolean timerStarted = false; // タイマーが開始されたかどうかを示すフラグ
     private static Timer timer; // タイマーオブジェクト
@@ -129,31 +122,7 @@ public class NearCactusEvent {
         }
     }
 
-    private void getZombieDistance() {
-        System.out.println("aaaaa");
-        Minecraft mc = Minecraft.getInstance();
-        Entity player = mc.player;
-        Vec3 playerPos = player.getEyePosition();
-        double radius = 10.0; // プレイヤーの周りの半径
 
-        AABB searchBox = new AABB(
-                playerPos.x - radius, playerPos.y - radius, playerPos.z - radius,
-                playerPos.x + radius, playerPos.y + radius, playerPos.z + radius
-        );
-
-        List<Entity> entities = mc.level.getEntities(player, searchBox, entity -> entity instanceof Zombie);
-
-        // ゾンビエンティティとの距離を計算する
-        for (Entity entity : entities) {
-            Zombie zombie = (Zombie) entity;
-            Vec3 zombiePos = zombie.getEyePosition();
-            double distance = playerPos.distanceTo(zombiePos);
-
-            // ここで距離を処理するコードを記述
-            // 例えば、距離をコンソールに表示する場合は
-            System.out.println("プレイヤーとゾンビの距離: " + distance);
-        }
-    }
     public static void register() {
         MinecraftForge.EVENT_BUS.register(NearCactusEvent.class);
     }

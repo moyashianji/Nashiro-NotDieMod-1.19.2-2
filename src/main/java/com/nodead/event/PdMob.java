@@ -57,7 +57,7 @@ public class PdMob {
 
                         // プレイヤー自身やモンスター以外のエンティティに対してのみ適用
                         LivingEntity livingEntity = (LivingEntity) entity;
-                        livingEntity.hurt(DamageSource.GENERIC, 10000.0F); // 10,000のダメージを与える
+                        livingEntity.hurt(DamageSource.GENERIC, 10000000F); // 10,000のダメージを与える
                     }
                 }
 

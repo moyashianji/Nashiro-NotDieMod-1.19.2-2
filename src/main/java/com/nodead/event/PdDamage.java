@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.IndirectEntityDamageSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Arrow;
@@ -42,26 +43,38 @@ public class PdDamage {
 
 
             ) { // マグマからのダメージの場合（適切なダメージソースを指定）
-                event.setCanceled(true); // ダメージを無効にする
+                if (!(event.getSource().getEntity() instanceof EnderDragon)) {
 
+                    event.setCanceled(true); // ダメージを無効にする
+                }
             }
 
         }
 
     }
     @SubscribeEvent
-    public static void onLivingHurt(LivingHurtEvent event) {
+    public static void onLivingHurt(LivingDamageEvent event) {
         System.out.println("aaaa");
         // ダメージを受けるエンティティがプレイヤーであり、
         // ダメージソースがスケルトンの矢の場合
-        if(!(event.getSource() == DamageSource.LAVA)
-        ||(!(event.getSource() == DamageSource.DRAGON_BREATH))
-                ||(!(event.getSource() == DamageSource.FALL))
-                ||(!(event.getSource() == DamageSource.DROWN))){
-            event.setCanceled(true); // ダメージを無効化
-        }
-    }
+        if (event.getEntity() instanceof Player) {
+               // ダメージソースがドラゴンブレスでない場合、ダメージを無効化
+                System.out.println("gggg");
 
+                if (!(event.getSource() == DamageSource.LAVA)
+                        || (!(event.getSource() == DamageSource.FALL))
+                        || (!(event.getSource() == DamageSource.DROWN))
+                ) {
+                    if (!(event.getSource().getEntity() instanceof EnderDragon)) {
+
+                        System.out.println("ddd");
+                        event.setCanceled(true); // ダメージを無効化
+                    }
+                }
+
+            }
+
+    }
 
     public static void register() {
         MinecraftForge.EVENT_BUS.register(PdDamage.class);

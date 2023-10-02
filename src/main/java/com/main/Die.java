@@ -10,6 +10,7 @@ import com.enderdragons.init.EnderdragonsModEntities;
 import com.enderdragons.init.EnderdragonsModItems;
 import com.itemmod.init.ItemmodModItems;
 import com.nodead.event.*;
+import com.ukiwa.init.UkiwaModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -42,6 +43,8 @@ public class Die {
         DragonTransfer3.register();
         NearCactusEvent.register();
         CactusEntityInit.REGISTRY.register(bus);
+        PdDragon.register();
+        UkiwaModItems.REGISTRY.register(bus);
 
         bus.addListener(this::onClientSetup);
     }

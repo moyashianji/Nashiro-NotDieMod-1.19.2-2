@@ -14,7 +14,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.lwjgl.glfw.GLFW;
 //・Pのキーを押すと、上昇する
 public class KeyGod {
-    private static final int KEY_P = GLFW.GLFW_KEY_F11; // Pキーのキーコード
+    private static final int KEY_P = GLFW.GLFW_KEY_X; // Pキーのキーコード
     private static boolean isPKeyPressed = false;
 
     @SubscribeEvent
